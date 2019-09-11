@@ -22,6 +22,11 @@ function theme_enqueue_styles() {
     wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/css/child-theme.min.css', array(), $the_theme->get( 'Version' ));
     wp_enqueue_style( 'child-understrap-fontsawesame', get_stylesheet_directory_uri() . 'assets/css/font-awesome.min.css', array(), $the_theme->get( 'Version' ));
 
+    wp_enqueue_style( 'Oswald-fonts', 'https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap');
+    wp_enqueue_style( 'Lato-fonts', 'https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i,900,900i&display=swap');
+
+    
+
 
     wp_enqueue_script( 'jquery');
     wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get( 'Version' ), true );
@@ -63,7 +68,7 @@ require dirname( __FILE__ ) . '/inc/tgm/tgm-init.php';
 require get_stylesheet_directory() . '/inc/options-init_php.php';
 
 
-
+add_image_size( 'blog_thumb', 328, 169, true );
 
 function rajimakers_custom_blog($atts)
 {
@@ -87,16 +92,12 @@ if ($query->have_posts()) {
 ?>
 <div class="rajimakers-blog-shortcode" > 
     <div class="container">
-        <div class="row">
+        <div class="row text-center">
             <?php while ($query->have_posts()): $query->the_post(); ?>
             <div class="col-md-4">
                 <div class="single-blog">
                     <a href="<?php the_permalink()?>">
-                        <?php 
-                        if ( has_post_thumbnail() ) { 
-                                the_post_thumbnail(); 
-                            }
-                        ?>  
+                        <?php the_post_thumbnail('blog_thumb'); ?>  
                     </a>
                     <div class="blog-content">
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>

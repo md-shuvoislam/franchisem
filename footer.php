@@ -16,26 +16,36 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
-<div class="footer-top-area">
+<div class="footer-top-area" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/img/footer-top-bg.jpg');background-size: cover; background-position: center; background-repeat: no-repeat; height: 100%;padding-top: 140px; padding-bottom: 300px; ">
 	<div class="container">
 		<div class="row text-center">
 			<div class="col-md-12">
-				<img src="http://localhost/franchisem/wp-content/uploads/2019/09/Screenshot_1.png" alt="">
-				<ul>
-					<li><a href=""><i class="fa fa-facebook"></i></a></li>
-					<li><a href=""><i class="fa fa-google-plus"></i></a></li>
-					<li><a href=""><i class="fa fa-twitter"></i></a></li>
-					<li><a href=""><i class="fa fa-instagram"></i></a></li>
-				</ul>
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/footer-logo.png" alt="">
+				<div class="footer-top-social">
+					<ul>
+						<li><a href=""><i class="fa fa-facebook"></i></a></li>
+						<li><a href=""><i class="fa fa-google-plus"></i></a></li>
+						<li><a href=""><i class="fa fa-twitter"></i></a></li>
+						<li><a href=""><i class="fa fa-instagram"></i></a></li>
+					</ul>
+				</div>
 				<a href="" class="footer-top-btn">See You Qualify</a>
 
-				<div class="footer-menu">
-					<?php wp_nav_menu(
-						array(
-							'theme_location'  => 'footer-menu',
-						)
-					); ?>
-				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="footer-menu">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<?php wp_nav_menu(
+					array(
+						'theme_location'  => 'footer-menu',
+					)
+				); ?>
 			</div>
 		</div>
 	</div>

@@ -37,7 +37,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<?php endif; ?>
 
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-4 left-menu">
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
 						<span class="navbar-toggler-icon"></span>
 					</button>
@@ -47,9 +47,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 							'theme_location'  => 'left-menu',
 							'container_class' => 'collapse navbar-collapse',
 							'container_id'    => 'navbarNavDropdown',
-							'menu_class'      => 'navbar-nav ml-auto',
+							'menu_class'      => 'navbar-nav',
 							'fallback_cb'     => '',
-							'menu_id'         => 'right-menu',
+							'menu_id'         => 'left-menu',
 							'depth'           => 2,
 							'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 						)
@@ -58,7 +58,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div class="col-md-4 text-center">
 					<?php the_custom_logo(); ?>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 right-menu">
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -68,7 +68,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							'theme_location'  => 'right-menu',
 							'container_class' => 'collapse navbar-collapse',
 							'container_id'    => 'navbarNavDropdown',
-							'menu_class'      => 'navbar-nav ml-auto',
+							'menu_class'      => 'navbar-nav',
 							'fallback_cb'     => '',
 							'menu_id'         => 'right-menu',
 							'depth'           => 2,
