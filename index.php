@@ -28,19 +28,38 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="servivces-heading">
+					<h2>Franchise mob <strong>Articles</strong></h2>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
 
 			<!-- Do the left sidebar check and opens the primary div -->
 			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
 
 			<main class="site-main" id="main">
-
 				<?php if ( have_posts() ) : ?>
 
 					<?php /* Start the Loop */ ?>
+					<div class="row blgo-featured-posts">
+						<div class="col-md-12">
+							<div class="divider-title">
+								<h2><span>Featured Articles</span></h2>
+							</div>
+							<?php echo do_shortcode('[faranshisem-blog]');?>
+						</div>
+					</div>
 
-					<?php while ( have_posts() ) : the_post(); ?>
-
-						<?php
+					<div class="divider-title-two">
+						<h2><span>Articles</span></h2>
+					</div>
+					<div class="row text-center">
+						<?php while ( have_posts() ) : the_post(); ?>
+						<div class="col-lg4 col-md-6">
+							<?php
 
 						/*
 						 * Include the Post-Format-specific template for the content.
@@ -49,8 +68,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 						 */
 						get_template_part( 'loop-templates/content', get_post_format() );
 						?>
+						</div>
+						
 
 					<?php endwhile; ?>
+					</div>
+
+					
 
 				<?php else : ?>
 
@@ -61,7 +85,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 			</main><!-- #main -->
 
 			<!-- The pagination component -->
-			<?php understrap_pagination(); ?>
+			<div class="posts-navigations">
+				<?php understrap_pagination(); ?>
+			</div>
 
 			<!-- Do the right sidebar check -->
 			<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
@@ -73,3 +99,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 </div><!-- #index-wrapper -->
 
 <?php get_footer(); ?>
+
+
+
+

@@ -23,7 +23,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div class="<?php echo esc_attr( $container ); ?>" id="content">
 		<div class="row text-center">
 			<div class="col-md-12 hero-content-area" id="primary">
-				<h1>#1 Source of Franchise Leads <br> For Franchisors Looking To </h2>
+				<h1><strong>#</strong>1 Source of Franchise Leads </h1>
+				<h2>For Franchisors Looking To </h2>
 				<p>WANT more organic business for your Franchise  sales Team?</p>
 				<a href="">See If you Qualify</a>
 			</div><!-- #primary -->
@@ -69,14 +70,24 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<h2>How Franchise MOB <strong>Will Help Accelerate Your Growth...</strong></h2>
 			</div>
 		</div>
-		<div class="row how-franchis-lists">
-			<div class="col-md-2">
-				1
-			</div>
-			<div class="col-md-10">
-				<p><strong>You Get Access to World-Class Franchise Sales & Marketing Experts</strong> The <strong>FranchiseMOB</strong> is more than just a funny acronym. We’re a team of franchise development and marketing experts with over 1,000 franchise territories units sold under our belts and generated millions in revenue.</p>
-			</div>
-		</div>
+		<?php
+		if( have_rows('how_franshise_lists') ): ?>
+		 	
+		   <?php while ( have_rows('how_franshise_lists') ) : the_row(); ?>
+
+		    	<div class="row how-franchis-lists">
+					<div class="col-md-2 number">
+						<p><?php the_sub_field('number'); ?></p>
+					</div>
+					<div class="col-md-10 how-item-text">
+						<?php the_sub_field('franchise_item_text'); ?>
+					</div>
+				</div>
+		   <?php endwhile;
+		else :
+		endif;
+
+		?>
 	</div>
 </div>
 
@@ -84,19 +95,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 text-center">
-				<div class="single-team" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/img/team-single-image.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+				<div class="single-team" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/img/team-single-image.png'); background-repeat: no-repeat; background-position: center; background-size: contain;height: 328px;">
 					<h3>Franchise Development</h3>
 					<a href="" class="learn-more-btn">Learn More</a>
 				</div>
 			</div>
 			<div class="col-md-4 text-center">
-				<div class="single-team" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/img/team-single-image.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+				<div class="single-team" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/img/team-single-image.png'); background-repeat: no-repeat; background-position: center; background-size: contain;height: 328px;">
 					<h3>Franchise Development</h3>
 					<a href="" class="learn-more-btn">Learn More</a>
 				</div>
 			</div>
 			<div class="col-md-4 text-center">
-				<div class="single-team" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/img/team-single-image.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+				<div class="single-team" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/img/team-single-image.png'); background-repeat: no-repeat; background-position: center; background-size: contain;height: 328px;">
 					<h3>Franchise Development</h3>
 					<a href="" class="learn-more-btn">Learn More</a>
 				</div>
@@ -117,10 +128,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 		</div>
 
 		<div class="row service">
-			<div class="col-md-6">
+			<div class="col-lg-6 col-md-6 service-text1">
 				<h3>Custom In house Lead Generation Programs</h3>
 				<p>Let us develop a custom lead-generation solution that will attract qualified franchise leads. This is our premier service and almost gauranteed to crush broker referral volume.</p>
-				<a href="" class="service-btn">Lear More</a>
+				<a href="" class="service-btn">Learn More</a>
 			</div>
 			<div class="col-md-6 text-right">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/services-image.jpg" alt="">
@@ -128,45 +139,45 @@ $container = get_theme_mod( 'understrap_container_type' );
 		</div>
 
 		<div class="row service">
-			<div class="col-md-6">
+			<div class="col-md-6 service-image">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/services-image.jpg" alt="">
 			</div>
-			<div class="col-md-6 franchise-salse">
+			<div class="col-md-6 service-text">
 				<h3>Custom In house Lead Generation Programs</h3>
 				<p>Let us develop a custom lead-generation solution that will attract qualified franchise leads. This is our premier service and almost gauranteed to crush broker referral volume.</p>
-				<a href="" class="service-btn">Lear More</a>
+				<a href="" class="service-btn">Learn More</a>
 			</div>
 		</div>
 
 		<div class="row service">
-			<div class="col-md-6">
+			<div class="col-md-6 service-text">
 				<h3>Custom In house Lead Generation Programs</h3>
 				<p>Let us develop a custom lead-generation solution that will attract qualified franchise leads. This is our premier service and almost gauranteed to crush broker referral volume.</p>
-				<a href="" class="service-btn">Lear More</a>
+				<a href="" class="service-btn">Learn More</a>
 			</div>
-			<div class="col-md-6 text-right">
+			<div class="col-md-6 text-right service-image">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/services-image.jpg" alt="">
 			</div>
 		</div>
 
 		<div class="row service">
-			<div class="col-md-6">
+			<div class="col-md-6 service-image">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/services-image.jpg" alt="">
 			</div>
-			<div class="col-md-6 franchise-salse">
+			<div class="col-md-6 service-text">
 				<h3>Custom In house Lead Generation Programs</h3>
 				<p>Let us develop a custom lead-generation solution that will attract qualified franchise leads. This is our premier service and almost gauranteed to crush broker referral volume.</p>
-				<a href="" class="service-btn">Lear More</a>
+				<a href="" class="service-btn">Learn More</a>
 			</div>
 		</div>
 
 		<div class="row service">
-			<div class="col-md-6">
+			<div class="col-md-6 service-text">
 				<h3>Custom In house Lead Generation Programs</h3>
 				<p>Let us develop a custom lead-generation solution that will attract qualified franchise leads. This is our premier service and almost gauranteed to crush broker referral volume.</p>
-				<a href="" class="service-btn">Lear More</a>
+				<a href="" class="service-btn">Learn More</a>
 			</div>
-			<div class="col-md-6 text-right">
+			<div class="col-md-6 text-right service-image">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/services-image.jpg" alt="">
 			</div>
 		</div>
@@ -202,7 +213,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<p>Download our FREE E-Book</p>
 				<h3>Cracking the code to Success</h3>
 			</div>
-			<div class="col-md-4 text-right">
+			<div class="col-md-4 text-left">
 				<a href="#">Download</a>
 			</div>
 		</div>

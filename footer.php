@@ -16,7 +16,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
-<div class="footer-top-area" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/img/footer-top-bg.jpg');background-size: cover; background-position: center; background-repeat: no-repeat; height: 100%;padding-top: 140px; padding-bottom: 300px; ">
+<div class="footer-top-area" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/img/footer-bg.png');background-size: cover; background-position: center; background-repeat: no-repeat; height: 764px;padding-top: 245px;">
 	<div class="container">
 		<div class="row text-center">
 			<div class="col-md-12">
@@ -29,7 +29,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<li><a href=""><i class="fa fa-instagram"></i></a></li>
 					</ul>
 				</div>
-				<a href="" class="footer-top-btn">See You Qualify</a>
+				<a href="" class="footer-top-btn">Shedule Your Free Consultation</a>
 
 				
 			</div>
